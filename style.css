@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Francois+One&family=Poppins:wght@300&display=swap');
+
+
+
+
 *, *::before,*::after{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Francois One', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,8 +17,9 @@ body{
     justify-content: center;
     align-items: center;
     background-color: #333;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
+    flex-wrap: wrap;
 
 }
 
@@ -23,6 +30,7 @@ body{
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
+    margin: 0 15px;
 
 }
 
@@ -46,8 +54,132 @@ body{
 
 }
 
+.container header{
+    position: relative;
+    font-size:20px;
+    font-weight: 600;
+    color: #333;
+    padding-bottom: 3px;
+}
 
+.container header::before{
+    content:"";
+    position: absolute;
+    bottom:-2px;
+    height: 3px;
+    width: 27px;
+    left: 0;
+    border-radius: 8px;
+    background-color: #4070f4; 
+    display: block;
+}
 
+.container form{
+    position: relative;
+    margin-top: 16px;
+    min-height: 490px;
+    overflow: hidden;
+  
+}
 
+.container form .form.second{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+}
 
+form.secActive .form.second{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+form.secActive .form.first{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-100%);
+}
+.container form .form{
+    position:absolute;
+    transition: 0.3s ease;
+   }
 
+.container form .title{
+    display: block;
+    margin-bottom:8px ;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 6px 0;
+    color:#333
+}
+.container form .fields{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+form .fields .input-field{
+    display:flex;
+    flex-direction: column;
+    width: calc(100% /3 - 15px);
+    margin: 4px 0;
+}
+.input-field input{
+    height: 42px;
+}
+.input-field label{
+    font-size: 12;
+    font-weight: 500;
+    color: gray;
+}
+
+.input-field input{
+    outline-color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    outline: none;
+    padding: 0 15px;
+    height: 42px;
+    margin: 8px 0;
+}
+
+.input-field input:is(:focus, :valid){
+    box-shadow: 0 3px 6px rgba(0,0,0,0.13) ;
+}
+
+.container form button, .backBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    max-width: 200px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin: 24px 0;
+    background-color: aquamarine;
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+}
+
+.container form button .backBtn{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+form button:hover{
+    background-color: aqua;
+
+}
+
+form .buttons{
+    display: flex;
+    align-items: center;
+}
+
+form .buttons button , .backBtn{
+    margin-right: 14px;
+}
