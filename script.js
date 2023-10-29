@@ -138,13 +138,14 @@ const choiceButtonsElement = document.getElementById('choice-buttons');
 
 
  }
-
+///Searches for text in the data set, made it extremely straight  forward just in case i want to continue//
  function showTextNode(textNodeIndex) {
      const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
     textElement.innerText = textNode.text;
      while (choiceButtonsElement.firstChild){
          choiceButtonsElement.removeChild(choiceButtonsElement.firstChild)
      }
+     ///For each method aka loop  and adding moving child.
      textNode.choice.forEach(choice =>{
          if(showChoice(choice)){
              const button = document.createElement('button');
@@ -186,7 +187,7 @@ const choiceButtonsElement = document.getElementById('choice-buttons');
               form.classList.add('secActive');
          }else{
               form.classList.remove('secActive');
-              alert('input is empty')
+              
           
          }
      });

@@ -1,0 +1,6 @@
+John Rodriguez SBA316 wanted to try my hand at create a game with what I learned,
+had to redo this 3 times. I was making it too complicated and there are still things to try,and to learn 
+for me to aim for what i origanlly planned. This is idea was Indie- Game site "Mad Hat Games"
+Theres a choose your own adventure game there.Has event listeners and a loop
+Created a sign up form for updates. For some reason my submit button disappeared.Plan was the form give people updates to new paths
+and designs.
