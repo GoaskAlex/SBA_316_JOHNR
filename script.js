@@ -57,14 +57,56 @@ const textNodes = [
         choice:[
             {
             text:'Pick Up',
+            setState:{sword:true},
             nextText:5,
         },{
             text:'Ignore',
-            nextText:6,
+            nextText:5,
         }]   
     
+    },{
+        id:5,
+        text: 'The bats enraged , coming flying at you at full force, you quickly notice a crack in the wall that leads some where, and theres path with vines blocking the exit',
+        choice:[
+            {
+            text:'Dive into the Crack',
+            nextText:16,
+        },{
+            text:'Cut the vines',
+            requiredState:(currentState)=>currentState.sword,setState:{sword: false, oddHilt: true },
+            nextText:6,
+        }]   
+    },{
+        id:6,
+        text: 'As your rush through the vines swinging the sword. You make it out the cave, but sadly the blade itself broke. The hilt of the sword glows bright red emitting great power. Theres a merchant that tells you lore about the cursed sword, and is will to buy it off you',
+        choice:[
+            {
+            text:'Keep ',
+            nextText:16,
+        },{
+            text:'Sell',
+            requiredState:(currentState)=>currentState.sword,setState:{oddHilt: false },
+            nextText:7 ,
+        }]  
+    },{
+        id:7,
+        text: 'They all of sudden transform and with a quick flash, your head comes off well thats unfortunate',
+        choice:[
+            {
+            text:'Again?',
+            nextText:1,
+        }]  
     },
-     {
+    {id:16,
+     text:'Bright flash happens Before you know it. Theres bright colors and gnomes dancing around you',
+     choice:[{text:'There isnt one, time to wake up!',
+              nextText:1,
+            }]
+
+    },
+     
+    
+    {
         id:15,
         text: 'Your Dead , your is purpose is forgotten',
         choice:[{
@@ -118,6 +160,8 @@ function selectChoice(choice){
 
 
 
+
+
  startGame();
 
 
@@ -127,7 +171,7 @@ function selectChoice(choice){
 
 
 
-///Building//
+
 
 
 
